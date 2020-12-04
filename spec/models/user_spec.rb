@@ -4,9 +4,12 @@
 #
 #  id           :bigint           not null, primary key
 #  admin        :boolean
+#  email        :string
 #  first_name   :string
 #  last_name    :string
-#  subscription :integer
+#  subscription :integer          default(0)
+#  token        :string
+#  uid          :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
