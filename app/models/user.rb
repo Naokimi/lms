@@ -20,4 +20,6 @@ class User < ApplicationRecord
   has_many :learning_playlists, through: :saved_playlists
 
   validates :subscription, inclusion: [0, 1, 2] # free, regular, premium
+  validates :email, presence: true, uniqueness: true
+  validates :first_name, :last_name, presence: true
 end
