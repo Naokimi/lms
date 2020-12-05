@@ -1,6 +1,7 @@
 class AuthorizationService
   def initialize(token = '')
     @token = token
+    p token
   end
 
   def authenticate_request!
