@@ -6,8 +6,9 @@ class Api::V1::SecureController < ActionController::API
   private
 
   def authorize_request
+    Rails.logger.info(request.headers)
     @token = request.headers['Authorization'].split(' ').last if request.headers['Authorization'].present?
-    AuthorizationService.new(@token).authenticate_request!
+    AuthorizationService.new(@token).authenticate_request! if @token
   rescue JWT::VerificationError, JWT::DecodeError
     user = current_user
     user&.update(token: nil)
