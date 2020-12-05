@@ -1,5 +1,5 @@
 class Api::V1::LearningModulesController < Api::V1::SecureController
-  before_action :set_learning_module, only: %i[show update destroy]
+  before_action :set_learning_module, only: %i[show update destroy purchase]
 
   def index
     learning_modules = policy_scope(LearningModule)
@@ -15,6 +15,17 @@ class Api::V1::LearningModulesController < Api::V1::SecureController
     authorize learning_module
     if learning_module.save!
       render json: learning_module, status: :created
+    else
+      render_error(errors.messages)
+    end
+  end
+
+  def purchase
+    purchased_module = PurchasedModule.new
+    purchased_module.learning_module = @learning_module
+    purchased_module.user = current_user
+    if purchased_module.save!
+      render json: { message: "Module #{@learning_module.id} successfully purchased" }, status: :created
     else
       render_error(errors.messages)
     end

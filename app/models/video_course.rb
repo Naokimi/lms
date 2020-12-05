@@ -19,5 +19,5 @@
 #  fk_rails_...  (learning_module_id => learning_modules.id)
 #
 class VideoCourse < ApplicationRecord
-  belongs_to :learning_modules
+  belongs_to :learning_module
 end

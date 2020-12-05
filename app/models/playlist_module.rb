@@ -19,6 +19,6 @@
 #  fk_rails_...  (learning_playlist_id => learning_playlists.id)
 #
 class PlaylistModule < ApplicationRecord
-  belongs_to :learning_modules
-  belongs_to :learning_playlists
+  belongs_to :learning_module
+  belongs_to :learning_playlist
 end

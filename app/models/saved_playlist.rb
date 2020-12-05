@@ -19,6 +19,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class SavedPlaylist < ApplicationRecord
-  belongs_to :users
-  belongs_to :learning_playlists
+  belongs_to :user
+  belongs_to :learning_playlist
 end

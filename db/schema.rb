@@ -50,11 +50,11 @@ ActiveRecord::Schema.define(version: 2020_12_01_134808) do
 
   create_table "purchased_modules", force: :cascade do |t|
     t.bigint "learning_module_id", null: false
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["learning_module_id"], name: "index_purchased_modules_on_learning_module_id"
-    t.index ["users_id"], name: "index_purchased_modules_on_users_id"
+    t.index ["user_id"], name: "index_purchased_modules_on_user_id"
   end
 
   create_table "saved_playlists", force: :cascade do |t|
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_134808) do
   add_foreign_key "playlist_modules", "learning_modules"
   add_foreign_key "playlist_modules", "learning_playlists"
   add_foreign_key "purchased_modules", "learning_modules"
-  add_foreign_key "purchased_modules", "users", column: "users_id"
+  add_foreign_key "purchased_modules", "users"
   add_foreign_key "saved_playlists", "learning_playlists"
   add_foreign_key "saved_playlists", "users"
   add_foreign_key "video_courses", "learning_modules"

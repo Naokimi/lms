@@ -19,12 +19,4 @@ class LearningModuleSerializer < ActiveModel::Serializer
     when 2 then 'professional'
     end
   end
-
-  # def exercises
-  #   object.exercises
-  # end
-
-  # def video_courses
-  #   object.video_courses
-  # end
 end
