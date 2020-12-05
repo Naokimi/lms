@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :users, only: :create do
         member do
           patch :login
-          patch :admin
+          patch :promote_to_admin
           patch :upgrade_to_premium
           patch :upgrade_to_professional
         end

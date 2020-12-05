@@ -1,4 +1,6 @@
 class Api::V1::SecureController < ActionController::API
+  include Pundit
+
   before_action :authorize_request
 
   private

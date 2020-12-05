@@ -67,6 +67,7 @@ end
 
 # permissions
 gem 'jwt'
+gem 'pundit'
 
 # API
 gem 'active_model_serializers'

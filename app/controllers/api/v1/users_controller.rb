@@ -20,7 +20,7 @@ class Api::V1::UsersController < ActionController::API
     render json: @user
   end
 
-  def admin
+  def promote_to_admin
     @user.update(admin: true)
     render json: { message: "User #{@user.id} promoted to admin" }
   end
