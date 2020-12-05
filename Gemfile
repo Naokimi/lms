@@ -71,3 +71,6 @@ gem 'pundit'
 
 # API
 gem 'active_model_serializers'
+
+# testing
+gem 'coveralls', require: false

@@ -19,3 +19,7 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
+
+notify:
+  webhooks:
+    - url: htpps://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN
