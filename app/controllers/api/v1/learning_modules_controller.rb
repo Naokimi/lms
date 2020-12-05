@@ -13,7 +13,7 @@ class Api::V1::LearningModulesController < Api::V1::SecureController
   def create
     learning_module = LearningModule.new(learning_module_params)
     authorize learning_module
-    if learning_module.save
+    if learning_module.save!
       render json: learning_module, status: :created
     else
       render_error(errors.messages)
@@ -21,10 +21,10 @@ class Api::V1::LearningModulesController < Api::V1::SecureController
   end
 
   def update
-    if @learning_module.update(learning_module_params)
+    if @learning_module.update!(learning_module_params)
       render json: @learning_module
     else
-      render_error(errors.messages)
+      render_error(e.messages)
     end
   end
 

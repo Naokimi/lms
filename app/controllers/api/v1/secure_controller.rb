@@ -15,9 +15,12 @@ class Api::V1::SecureController < ActionController::API
   end
 
   def current_user
-    return render_unauthorized unless @token
+    return unless @token
 
-    User.find_by_token(@token)
+    user = User.find_by_token(@token)
+    return render_unauthorized if user.nil?
+
+    user
   end
 
   def render_unauthorized

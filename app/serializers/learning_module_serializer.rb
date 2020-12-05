@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: learning_modules
+#
+#  id           :bigint           not null, primary key
+#  description  :text
+#  subscription :integer          default(0)
+#  title        :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 class LearningModuleSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :subscription_level, :exercises, :video_courses
 
@@ -9,11 +20,11 @@ class LearningModuleSerializer < ActiveModel::Serializer
     end
   end
 
-  def exercises
-    object.exercises
-  end
+  # def exercises
+  #   object.exercises
+  # end
 
-  def video_courses
-    object.video_courses
-  end
+  # def video_courses
+  #   object.video_courses
+  # end
 end

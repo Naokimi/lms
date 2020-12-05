@@ -3,7 +3,7 @@ class CreateLearningModules < ActiveRecord::Migration[6.0]
     create_table :learning_modules do |t|
       t.string :title
       t.text :description
-      t.integer :subscription
+      t.integer :subscription, default: 0
 
       t.timestamps
     end
