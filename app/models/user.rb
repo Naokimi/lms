@@ -19,7 +19,11 @@ class User < ApplicationRecord
   has_many :saved_playlists
   has_many :learning_playlists, through: :saved_playlists
 
-  validates :subscription, inclusion: [0, 1, 2] # free, regular, premium
+  validates :subscription, inclusion: [0, 1, 2] # basic, premium, professional
   validates :email, presence: true, uniqueness: true
   validates :first_name, :last_name, presence: true
+
+  def full_name
+    first_name + ' ' + last_name
+  end
 end

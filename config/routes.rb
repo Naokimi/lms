@@ -8,6 +8,8 @@ Rails.application.routes.draw do
         member do
           patch :login
           patch :admin
+          patch :upgrade_to_premium
+          patch :upgrade_to_professional
         end
       end
     end

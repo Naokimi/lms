@@ -67,3 +67,6 @@ end
 
 # permissions
 gem 'jwt'
+
+# API
+gem 'active_model_serializers'
