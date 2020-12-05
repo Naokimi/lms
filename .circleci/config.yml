@@ -93,11 +93,11 @@ jobs:
           DB_HOST: 127.0.0.1
           PG_HOST: 127.0.0.1
           PGUSER: lms_test
-          POSTGRES_HOST_AUTH_METHOD: trust
       - image: circleci/postgres:10.15
         environment:
           POSTGRES_DB: lms_test
           POSTGRES_USER: lms_test
+          POSTGRES_HOST_AUTH_METHOD: trust
     executor: ruby/default
     steps:
       - checkout
