@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2
+  coveralls: coveralls/coveralls@1.0.6
 
 jobs:
   build:
@@ -19,7 +20,7 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
-
-notify:
-  webhooks:
-    - url: htpps://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN
+      - run:
+          name: Tests
+          command: bundle exec rspec
+      - coveralls/upload
