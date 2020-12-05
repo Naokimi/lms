@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to Test
+Create a user and upgrade it to admin using the following endpoints. 
+Save the token you get from *creating* or *logging in* a user, and pass it as a **bearer token** in Postman's Authorization tab for the other controller actions
 
-Things you may want to cover:
+### User Endpoints
+**POST /api/v1/users**
 
-* Ruby version
+_params_
+```
+{
+  email: 'tst@gmail.com',
+  first_name: 'test',
+  last_name: 'test'
+}
+```
 
-* System dependencies
+**PATCH /api/v1/users/:id/login**
 
-* Configuration
+**PATCH /api/v1/users/:id/promote_to_admin**
 
-* Database creation
+**PATCH /api/v1/users/:id/upgrade_to_premium**
 
-* Database initialization
+**PATCH /api/v1/users/:id/upgrade_to_professional**
 
-* How to run the test suite
+### Learning Modules Endpoints
+Standard Rails API endpoints plus the following:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**POST /api/v1/learning_modules/:id/purchase**
