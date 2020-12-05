@@ -16,4 +16,6 @@ class LearningModule < ApplicationRecord
   has_many :learning_playlists, through: :playlist_modules
   has_many :exercises, dependent: :destroy
   has_many :video_courses, dependent: :destroy
+
+  validates :title, :description, presence: true
 end

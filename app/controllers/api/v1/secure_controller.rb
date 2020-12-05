@@ -15,14 +15,16 @@ class Api::V1::SecureController < ActionController::API
   end
 
   def current_user
-    if @token
-      User.find_by_token(@token)
-    else
-      render_unauthorized
-    end
+    return render_unauthorized unless @token
+
+    User.find_by_token(@token)
   end
 
   def render_unauthorized
     render json: { errors: ['Not Authenticated'] }, status: :unauthorized
+  end
+
+  def render_error(e)
+    render json: { errors: e }, status: 422
   end
 end
