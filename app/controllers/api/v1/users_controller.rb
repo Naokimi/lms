@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ActionController::API
-  before_action :set_user, only: %i[login admin upgrade_to_premium upgrade_to_professional]
+  before_action :set_user, only: %i[login promote_to_admin upgrade_to_premium upgrade_to_professional]
 
   def create
     user = User.new(user_params)

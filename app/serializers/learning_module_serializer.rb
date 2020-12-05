@@ -9,8 +9,14 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
-require 'rails_helper'
+class LearningModuleSerializer < ActiveModel::Serializer
+  attributes :id, :title, :description, :subscription_level, :exercises, :video_courses
 
-RSpec.describe LearningModule, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  def subscription_level
+    case object.subscription
+    when 0 then 'basic'
+    when 1 then 'premium'
+    when 2 then 'professional'
+    end
+  end
 end
