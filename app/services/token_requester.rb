@@ -14,6 +14,6 @@ class TokenRequester
     request.body = "{\"client_id\":\"#{ENV['AUTH0_CLIENT_ID']}\",\"client_secret\":\"#{ENV['AUTH0_CLIENT_SECRET']}\",\"audience\":\"https://#{ENV['AUTH0_DOMAIN']}/api/v2/\",\"grant_type\":\"client_credentials\"}"
 
     response = http.request(request)
-    response.read_body
+    JSON.parse(response.read_body)['access_token']
   end
 end
