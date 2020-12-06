@@ -31,5 +31,11 @@ module Lms
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Sentry
+    Raven.configure do |config|
+      config.dsn = 'https://ced21835f4c0442da372a6083712bdfb@o487439.ingest.sentry.io/5546228'
+    end
+    config.filter_parameters << :password
   end
 end

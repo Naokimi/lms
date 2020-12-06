@@ -77,3 +77,4 @@ gem 'coveralls', require: false
 
 # analytics
 gem 'newrelic_rpm'
+gem 'sentry-raven'
