@@ -74,3 +74,6 @@ gem 'active_model_serializers'
 
 # testing
 gem 'coveralls', require: false
+
+# analytics
+gem 'newrelic_rpm'
