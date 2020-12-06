@@ -28,3 +28,6 @@ _params_
 Standard Rails API endpoints plus the following:
 
 **POST /api/v1/learning_modules/:id/purchase**
+
+### Database Schema
+https://dbdiagram.io/d/5fc63e643a78976d7b7e12f3
